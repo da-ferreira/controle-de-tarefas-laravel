@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\RedefinirSenhaNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Sobrescreve o método padrão herdado de Authenticatable para customizar
+     * o envio de emails personalizados para redefinir senhas de login.
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new RedefinirSenhaNotification($token, $this->email, $this->name));
+    }
 }
