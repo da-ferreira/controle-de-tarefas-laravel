@@ -5,9 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header text-center fw-bold">Adicionar tarefa</div>
+
+                {{-- <div class="card-header text-center fw-bold">Adicionar tarefa</div> --}}
 
                 <div class="card-body">
+                    <h5 class="card-title fw-bold text-center mb-3">Adicionar tarefa</h5>
+
                     <form action="{{ route('tarefa.store') }}" method="POST">
                         @csrf
 
