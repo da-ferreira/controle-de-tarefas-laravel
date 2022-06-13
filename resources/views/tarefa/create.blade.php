@@ -9,7 +9,7 @@
                 {{-- <div class="card-header text-center fw-bold">Adicionar tarefa</div> --}}
 
                 <div class="card-body">
-                    <h5 class="card-title fw-bold text-center mb-3">Adicionar tarefa</h5>
+                    <h4 class="card-title fw-bold text-center mb-3">Adicionar tarefa</h3>
 
                     <form action="{{ route('tarefa.store') }}" method="POST">
                         @csrf

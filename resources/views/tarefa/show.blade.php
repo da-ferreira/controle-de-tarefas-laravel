@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body text-center">
-                    <h5 class="card-title fw-bold">{{ $tarefa->tarefa }}</h5>
+                    <h4 class="card-title fw-bold">{{ $tarefa->tarefa }}</h4>
 
                     <fieldset disabled class="justify-content-center">
                         <div class="mb-3 col-md-5 mx-auto">
