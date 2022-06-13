@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
-    ->name('home')
-    ->middleware('verified');  // A rota só será liberada se o usuário estiver com o email verificado
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+//     ->name('home')
+//     ->middleware('verified');  // A rota só será liberada se o usuário estiver com o email verificado
 
 Route::resource('tarefa', 'App\Http\Controllers\TarefaController')
     ->middleware('verified');

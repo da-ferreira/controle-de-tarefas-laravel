@@ -9,11 +9,11 @@
                 <div class="card-body">
                     <h3 class="card-title fw-bold text-center mb-3">Tarefas</h3>
 
-                    <table class="table table-hover text-center">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Tarefa</th>
+                                <th scope="col" class="text-center">Tarefa</th>
                                 <th scope="col">Data limite de conclusão</th>
                             </tr>
                         </thead>
