@@ -12,7 +12,6 @@
                     <table class="table table-hover text-center">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Tarefa</th>
                                 <th scope="col">Data limite de conclusão</th>
@@ -22,7 +21,6 @@
 
                             @foreach ($tarefas as $tarefa)
                                 <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
                                     <td>{{ $tarefa->id }}</td>
                                     <td>{{ $tarefa->tarefa }}</td>
                                     <td>{{ date('d/m/Y', strtotime($tarefa->data_limite_conclusao)) }}</td>
