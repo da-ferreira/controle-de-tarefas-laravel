@@ -27,10 +27,10 @@ Auth::routes(['verify' => true]);
 Route::resource('tarefa', 'App\Http\Controllers\TarefaController')
     ->middleware('verified');
 
-Route::get('/mensagem-teste', function () {
-    return new MensagemMail();
+// Route::get('/mensagem-teste', function () {
+//     return new MensagemMail();
 
-    // Enviando um email passando a instancia de MensagemMail
-    // Mail::to('jorgearagao8888@gmail.com')->send(new MensagemMail());
-    // return 'Email enviado com sucesso!';
-});
+//     // Enviando um email passando a instancia de MensagemMail
+//     // Mail::to('jorgearagao8888@gmail.com')->send(new MensagemMail());
+//     // return 'Email enviado com sucesso!';
+// });
