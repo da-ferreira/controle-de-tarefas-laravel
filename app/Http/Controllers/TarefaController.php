@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TarefasExport;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NovaTarefaMail;
 use App\Models\Tarefa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TarefaController extends Controller
 {
@@ -111,5 +113,19 @@ class TarefaController extends Controller
         }
 
         return view('acesso_negado');
+    }
+
+    /**
+     * Exporta todas as tarefas em XLSX ou CSV.
+     *
+     * @param [string] $extension Deve ser 'xlsx' ou 'csv'
+     */
+    public function export($extension)
+    {
+        if (in_array($extension, ['xlsx', 'csv'])) {
+            return Excel::download(new TarefasExport(), 'tarefas.' . $extension);
+        }
+
+        return redirect()->route('tarefa.index');
     }
 }
