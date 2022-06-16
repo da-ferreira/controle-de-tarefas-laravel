@@ -8,6 +8,7 @@ use App\Mail\NovaTarefaMail;
 use App\Models\Tarefa;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class TarefaController extends Controller
 {
@@ -116,16 +117,27 @@ class TarefaController extends Controller
     }
 
     /**
-     * Exporta todas as tarefas em XLSX, CSV ou PDF.
+     * Exporta todas as tarefas em XLSX ou CSV.
      *
-     * @param [string] $extension Deve ser 'xlsx', 'csv' ou 'pdf'
+     * @param [string] $extension Deve ser 'xlsx' ou 'csv'
      */
     public function export($extension)
     {
-        if (in_array($extension, ['xlsx', 'csv', 'pdf'])) {
+        if (in_array($extension, ['xlsx', 'csv'])) {
             return Excel::download(new TarefasExport(), 'tarefas.' . $extension);
         }
 
         return redirect()->route('tarefa.index');
+    }
+
+    /**
+     * Exporta todas as tarefas para PDF
+     *
+     * @return void
+     */
+    public function exportPdf()
+    {
+        $pdf = PDF::loadView('tarefa.pdf', ['tarefas' => auth()->user()->tarefas()->get()]);
+        return $pdf->download('tarefas.pdf');
     }
 }

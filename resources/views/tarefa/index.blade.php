@@ -10,7 +10,7 @@
                     <h3 class="card-title fw-bold text-center mb-3">
                         Tarefas
 
-                        {{-- Drop  --}}
+                        {{-- Dropdown --}}
                         <div class="dropdown float-end d-inline">
                             <p class="dropdown-toggle fs-5 text-secondary" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 exportar
@@ -19,7 +19,7 @@
                             <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'xlsx']) }}">XLSX</a></li>
                                 <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'csv']) }}">CSV</a></li>
-                                <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'pdf']) }}">PDF</a></li>
+                                <li><a class="dropdown-item" href="{{ route('tarefa.exportPdf') }}">PDF</a></li>
                             </ul>
                         </div>
 
