@@ -19,6 +19,7 @@
                             <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'xlsx']) }}">XLSX</a></li>
                                 <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'csv']) }}">CSV</a></li>
+                                <li><a class="dropdown-item" href="{{ route('tarefa.export', ['extension' => 'pdf']) }}">PDF</a></li>
                             </ul>
                         </div>
 

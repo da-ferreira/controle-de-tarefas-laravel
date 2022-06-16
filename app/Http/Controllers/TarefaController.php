@@ -116,13 +116,13 @@ class TarefaController extends Controller
     }
 
     /**
-     * Exporta todas as tarefas em XLSX ou CSV.
+     * Exporta todas as tarefas em XLSX, CSV ou PDF.
      *
-     * @param [string] $extension Deve ser 'xlsx' ou 'csv'
+     * @param [string] $extension Deve ser 'xlsx', 'csv' ou 'pdf'
      */
     public function export($extension)
     {
-        if (in_array($extension, ['xlsx', 'csv'])) {
+        if (in_array($extension, ['xlsx', 'csv', 'pdf'])) {
             return Excel::download(new TarefasExport(), 'tarefas.' . $extension);
         }
 
