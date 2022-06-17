@@ -1,2 +1,2 @@
-# Laravel UI + Auth + Boostrap
-Utilizando o recurso auth, nativo do Laravel para autenticação WEB, junto com o Laravel UI + Bootstrap
+# controle-de-tarefas-laravel
+App de controle de tarefas - Laravel, Parte 2 (Udemy) - Laravel UI + Auth + Envio de emails e exportação de dados em XLSX, CSV e PDF
