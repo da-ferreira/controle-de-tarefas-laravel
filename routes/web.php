@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bem_vindo');
+    // return view('bem_vindo');
+    return redirect()->route('tarefa.index');
 });
 
 Auth::routes(['verify' => true]);
@@ -23,8 +24,8 @@ Auth::routes(['verify' => true]);
 Route::get('tarefa/export/{extension}', [App\Http\Controllers\TarefaController::class, 'export'])
     ->name('tarefa.export');
 
-Route::get('tarefa/exportPdf', [App\Http\Controllers\TarefaController::class, 'exportPdf'])
-    ->name('tarefa.exportPdf');
+Route::get('tarefa/export-pdf', [App\Http\Controllers\TarefaController::class, 'exportPdf'])
+    ->name('tarefa.export-pdf');
 
 Route::resource('tarefa', 'App\Http\Controllers\TarefaController')
     ->middleware('verified');

@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Tarefa::factory(50)->create();
+        \App\Models\Tarefa::factory(20)->create();
     }
 }
