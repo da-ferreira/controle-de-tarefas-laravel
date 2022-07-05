@@ -110,7 +110,7 @@ class TarefaController extends Controller
     {
         if (auth()->user()->id == $tarefa->user_id) {
             $tarefa->delete();
-            return redirect()->route('tarefa.index');
+            return redirect()->route('tarefa.index')->with('message', 'Post deleted successfully');
         }
 
         return view('acesso_negado');

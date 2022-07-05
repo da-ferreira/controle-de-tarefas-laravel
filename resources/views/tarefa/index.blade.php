@@ -10,6 +10,15 @@
                     <h3 class="card-title fw-bold text-center mb-3">
                         Tarefas
 
+                        @if (session('message'))
+                            <div class="row d-flex justify-content-center">
+                                <div class="alert alert-success alert-dismissible fade show col-md-4 col-md-offset-4" role="alert">
+                                    {{ session('message') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        @endif
+
                         {{-- Dropdown --}}
                         <div class="dropdown float-end d-inline">
                             <p class="dropdown-toggle fs-5 text-secondary" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
